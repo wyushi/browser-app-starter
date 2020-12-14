@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+import * as React from "react";
+import { Post } from "./features/post/Post";
 
-function App() {
-    return <div>Hello, World</div>;
+function App(): React.ReactElement {
+    return <Post />;
 }
 
 export default App;
