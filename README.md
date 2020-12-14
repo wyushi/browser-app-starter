@@ -5,5 +5,5 @@
 - [x] Redux
 - [ ] Redux DevTool (Browser Plugin)
 - [x] Webpack
-- [ ] Yarn
+- [x] Yarn
 - [ ] Jest
