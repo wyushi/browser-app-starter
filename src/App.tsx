@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Post } from "./features/post/Post";
+import PostPanel from "./features/post/PostPanel";
 
 function App(): React.ReactElement {
-    return <Post />;
+    return <PostPanel />;
 }
 
 export default App;
