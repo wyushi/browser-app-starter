@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrent, selectPost, loadPosts, submitPost } from "./postSlice";
-import TextInput from "../common/TextInput";
-import List from "../common/List";
+import { setCurrent, selectPost, loadPosts, submitPost } from "../postSlice";
+import TextInput from "../../common/TextInput";
+import List from "../../common/List";
 import PostItem from "./PostItem";
-import Post from "./Post";
+import Post from "../model/Post";
 
 const PostPanel = () => {
     const data = useSelector(selectPost);
