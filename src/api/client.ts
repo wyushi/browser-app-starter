@@ -17,4 +17,4 @@ export const post = (url: string = '', data: any = {}): Promise<any> => {
   return createDelayPromise(100, {
     post: data
   });
-}
+};

@@ -1,18 +1,16 @@
 import React from "react";
 
 type TextInputProp = {
-    text: string;
-    onInputTextChange: (value: string) => void,
-    submitButtonClick: () => void
+    text?: string;
+    onInputTextChange?: (value: string) => void,
+    submitButtonClick?: () => void
 };
 
-type PostInputType = (props: TextInputProp) => React.ReactElement<TextInputProp>;
-
-const TextInput: PostInputType = ({
+const TextInput = ({
     text = "",
-    onInputTextChange,
-    submitButtonClick
-}) => (
+    onInputTextChange = (_) => {},
+    submitButtonClick = () => {}
+}: TextInputProp): React.ReactElement<TextInputProp> => (
     <div>
         <input
             value={text}

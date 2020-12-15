@@ -53,6 +53,6 @@ export const postSlice = createSlice({
 
 export const { setCurrent } = postSlice.actions;
 
-export const selectPost = state => state.post;
+export const selectPost = (state: any) => state.post;
 
 export default postSlice.reducer;

@@ -5,7 +5,7 @@ type PostItemProp = {
     post: Post;
 };
 
-type PostItemType = (props: PostItemProp) => React.ReactElement;
+type PostItemType = (props: PostItemProp) => React.ReactElement<PostItemProp>;
 
 const PostItem: PostItemType = (props) => (
     <div>{props.post.content}</div>

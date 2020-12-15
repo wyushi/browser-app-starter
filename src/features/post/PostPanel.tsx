@@ -18,10 +18,9 @@ const PostPanel = () => {
 
     return (
         <div>
-            <List
-                items={data.posts}
-                createRow={(post: Post) => <PostItem post={post} />} 
-                status={data.status}/>
+            <List isBusy={data.status == "loading"}>
+                {data.posts.map((post: Post) => <PostItem post={post} />)}
+            </List>
             <TextInput 
                 text={data.current}
                 onInputTextChange={value => dispatch(setCurrent(value))}
