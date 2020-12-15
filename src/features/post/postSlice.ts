@@ -1,26 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as client from "../../api/client";
+import Post from "./model/Post";
 
 export const loadPosts = createAsyncThunk('post/loadPosts', async () => {
-    const response = await client.get("/post");
-    return response.posts;
+    return await client.callRemote(100, [] as Post[]);
 });
 
 export const submitPost = createAsyncThunk('post/submitPost', async (content: string) => {
-    const response = await client.post("/post", { content });
-    return response.post;
-})
+    const post: Post = { content };
+    return await client.callRemote(100, post);
+});
 
-interface PostState {
+export interface PostState {
     current: string,
-    posts: any[],
+    posts: Post[],
     status: 'idle' | 'loading' | 'succeeded' | 'failed',
     error: string | null
 }
 
 const initialState: PostState = {
     current: "",
-    posts: <string[]> [],
+    posts: <Post[]> [],
     status: 'idle',
     error: null
 };
